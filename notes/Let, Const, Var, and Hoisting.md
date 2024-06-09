@@ -8,7 +8,7 @@ var accountPassword = "12345";
 // Can declare variable but not recommended
 accountCity = "Lahore";
 
-console.table([accountId, accountEmail, accountPassword, accountCity])
+console.table([accountId, accountEmail, accountPassword, accountCity]);
 ```
 
 `const` is used to declare constants, meaning it’s value cannot be changed after initialization.
@@ -19,35 +19,33 @@ Consider the following example:
 
 ```jsx
 function greet(name) {
-    if (name === "Zain") {
-        var message = "Hello, " + name;
-    }
-    console.log(message);
-
+  if (name === "Zain") {
+    var message = "Hello, " + name;
+  }
+  console.log(message);
 }
 
 greet("Zain");
 // output: Hello, Zain
 ```
 
-Here you can see that variable `message` is declared with `var` inside the `if` ****block but it is still accessible outside the `if` ****block. This is **Function Scope**.
+Here you can see that variable `message` is declared with `var` inside the `if` block but it is still accessible outside the `if` block. This is **Function Scope**.
 
 ```jsx
 function greet(name) {
-    if (name === "Zain") {
-        let message = "Hello, " + name;
-    }
-    console.log(message);
-
+  if (name === "Zain") {
+    let message = "Hello, " + name;
+  }
+  console.log(message);
 }
 
 greet("Zain");
 // output: ReferenceError
 ```
 
-Here, `let` is used and we cannot access the variable outside the `if` ****block. This is **Block Scope**.
+Here, `let` is used and we cannot access the variable outside the `if` block. This is **Block Scope**.
 
-Another problem with `var` is **Hoisting**. 
+Another problem with `var` is **Hoisting**.
 
 ## Hoisting
 
@@ -72,7 +70,7 @@ With `let`, there's no hoisting. Since the declaration is after the `console.log
 ```jsx
 greet(); // Works!
 function greet() {
-console.log("Hello from the function!");
+  console.log("Hello from the function!");
 }
 ```
 
@@ -80,9 +78,9 @@ The function declaration `greet` is hoisted, so you can call it before its actua
 
 ```jsx
 greet(); // Throws: TypeError: greet is not a function
-const greet = function() {
-console.log("Hello from the function!");
-}
+const greet = function () {
+  console.log("Hello from the function!");
+};
 ```
 
 Function expressions assigned to variables are not hoisted. Trying to call `greet` before its definition results in a `TypeError`.
