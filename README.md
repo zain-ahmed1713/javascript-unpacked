@@ -23,3 +23,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Primitive & Non-Primitive Types](notes/Primitive%20&%20Non-Primitive%20Types.md)
 
 [Arrays](notes/Arrays.md)
+
+[Objects](notes/Objects.md)
