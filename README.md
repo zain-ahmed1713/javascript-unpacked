@@ -25,3 +25,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Arrays](notes/Arrays.md)
 
 [Objects](notes/Objects.md)
+
+[Functions](notes/Functions.md)
