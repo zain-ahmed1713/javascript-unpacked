@@ -29,3 +29,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Functions](notes/Functions.md)
 
 [Immediately Invoked Function Expression (IIFE)](<notes/Immediately%20Invoked%20Function%20Expression%20(IIFE).md>)
+
+[this keyword](notes/this%20keyword.md)
