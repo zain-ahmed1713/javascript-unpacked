@@ -33,3 +33,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [this keyword](notes/this%20keyword.md)
 
 [How JS executes code?](notes/How%20JS%20executes%20code.md)
+
+[For…in, For…of, and Foreach Loop](notes/For…in,%20For…of,%20and%20Foreach%20Loop.md)
