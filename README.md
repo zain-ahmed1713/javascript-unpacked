@@ -37,3 +37,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [For…in, For…of, and Foreach Loop](notes/For…in,%20For…of,%20and%20Foreach%20Loop.md)
 
 [Filter, Map, and Reduce](notes/Filter,%20Map,%20and%20Reduce.md)
+
+[Document Object Model](notes/Document%20Object%20Model.md)
