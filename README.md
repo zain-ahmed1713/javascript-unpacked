@@ -39,3 +39,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Filter, Map, and Reduce](notes/Filter,%20Map,%20and%20Reduce.md)
 
 [Document Object Model](notes/Document%20Object%20Model.md)
+
+[Events](notes/Events.md)
