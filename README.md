@@ -41,3 +41,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Document Object Model](notes/Document%20Object%20Model.md)
 
 [Events](notes/Events.md)
+
+[Asynchronous JavaScript](notes/asyncJS)
