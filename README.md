@@ -42,4 +42,4 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 
 [Events](notes/Events.md)
 
-[Asynchronous JavaScript](notes/asyncJS)
+[Asynchronous JavaScript](notes/asyncJS.md)
