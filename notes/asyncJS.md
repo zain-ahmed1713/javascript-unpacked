@@ -108,3 +108,150 @@ stopBtn.addEventListener("click", () => {
   timeOut = null;
 });
 ```
+
+## Promises
+
+A **Promise** in JavaScript is an object representing the eventual completion (or failure) of an asynchronous operation and its resulting value. Promises allow you to write asynchronous code in a more synchronous-like fashion, avoiding the "callback hell."
+
+### Promise States
+
+A Promise can be in one of three states:
+
+1. **Pending**: Initial state, neither fulfilled nor rejected.
+2. **Fulfilled**: The operation completed successfully.
+3. **Rejected**: The operation failed.
+
+### Creating a Promise
+
+A Promise is created using the `Promise` constructor:
+
+```jsx
+let promise = new Promise((resolve, reject) => {
+  // Asynchronous operation
+  let success = true;
+
+  if (success) {
+    resolve("Operation was successful!");
+  } else {
+    reject("Operation failed!");
+  }
+});
+```
+
+### Consuming a Promise
+
+To handle the resolved or rejected state of a Promise, we use `.then()` and `.catch()` methods:
+
+```jsx
+promise
+  .then((result) => {
+    console.log(result); // "Operation was successful!"
+  })
+  .catch((error) => {
+    console.log(error); // "Operation failed!"
+  });
+```
+
+### Chaining Promises
+
+You can chain multiple `.then()` calls to handle a sequence of asynchronous operations:
+
+```jsx
+promise
+  .then((result) => {
+    console.log(result);
+    return "Next step";
+  })
+  .then((nextResult) => {
+    console.log(nextResult);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+### Promise Methods
+
+1. **Promise.all()**
+
+   This method takes an array of Promises and returns a new Promise that resolves when all the input Promises have resolved, or rejects if any of the input Promises reject.
+
+   ```jsx
+   let promise1 = Promise.resolve(3);
+   let promise2 = 42;
+   let promise3 = new Promise((resolve, reject) => {
+     setTimeout(resolve, 100, "foo");
+   });
+
+   Promise.all([promise1, promise2, promise3]).then((values) => {
+     console.log(values); // [3, 42, 'foo']
+   });
+   ```
+
+2. **Promise.race()**
+
+   This method returns a Promise that resolves or rejects as soon as one of the Promises in the array resolves or rejects.
+
+   ```jsx
+   let promise1 = new Promise((resolve, reject) => {
+     setTimeout(resolve, 500, "one");
+   });
+
+   let promise2 = new Promise((resolve, reject) => {
+     setTimeout(resolve, 100, "two");
+   });
+
+   Promise.race([promise1, promise2]).then((value) => {
+     console.log(value); // "two"
+   });
+   ```
+
+3. **Promise.allSettled()**
+
+   This method returns a Promise that resolves after all of the given Promises have either resolved or rejected, with an array of objects that each describes the outcome of each Promise.
+
+   ```jsx
+   let promise1 = Promise.resolve(3);
+   let promise2 = new Promise((resolve, reject) =>
+     setTimeout(reject, 100, "error")
+   );
+
+   Promise.allSettled([promise1, promise2]).then((results) =>
+     results.forEach((result) => console.log(result.status))
+   );
+   // "fulfilled"
+   // "rejected"
+   ```
+
+4. **Promise.any()**
+
+   This method returns a Promise that resolves as soon as any of the Promises in the array resolves. If all of the Promises reject, it returns an AggregateError.
+
+   ```jsx
+   let promise1 = Promise.reject(0);
+   let promise2 = new Promise((resolve) => setTimeout(resolve, 100, "quick"));
+   let promise3 = new Promise((resolve) => setTimeout(resolve, 500, "slow"));
+
+   Promise.any([promise1, promise2, promise3])
+     .then((value) => {
+       console.log(value); // "quick"
+     })
+     .catch((error) => {
+       console.log(error);
+     });
+   ```
+
+### Error Handling
+
+It is important to handle errors in Promises to avoid unhandled promise rejections:
+
+```jsx
+promise
+  .then((result) => {
+    console.log(result);
+    throw new Error("Something went wrong!");
+  })
+  .catch((error) => {
+    console.error("Caught an error:", error.message);
+  });
+```
