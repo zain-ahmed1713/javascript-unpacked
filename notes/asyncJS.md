@@ -293,3 +293,31 @@ fetch("https://jsonplaceholder.typicode.com/posts/1")
     console.error("There has been a problem with your fetch operation:", error);
   });
 ```
+
+## Async/Await
+
+**Async/Await** is a syntactic sugar built on top of promises. It allows you to write asynchronous code in a synchronous manner, making it easier to read and write.
+
+### Basic Usage
+
+1. **async function**: Declares an asynchronous function.
+2. **await**: Pauses the execution of the async function, waiting for the promise to resolve.
+
+```jsx
+async function fetchData() {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/posts/1"
+    );
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("There has been a problem with your fetch operation:", error);
+  }
+}
+
+fetchData();
+```
