@@ -255,3 +255,41 @@ promise
     console.error("Caught an error:", error.message);
   });
 ```
+
+## Fetch
+
+The **Fetch API** provides a modern, flexible interface for making HTTP requests to servers from web browsers. It is an improvement over the older XMLHttpRequest and provides a simpler and cleaner way to interact with network resources.
+
+### Basic Fetch Usage
+
+The basic syntax for using fetch is:
+
+```jsx
+fetch(url)
+  .then((response) => {
+    // handle the response
+  })
+  .catch((error) => {
+    // handle the error
+  });
+```
+
+### Fetching Data from an API
+
+Let's fetch data from a simple API endpoint. For example, we will use the JSONPlaceholder API, which is a free fake online REST API for testing and prototyping.
+
+```jsx
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error("There has been a problem with your fetch operation:", error);
+  });
+```
