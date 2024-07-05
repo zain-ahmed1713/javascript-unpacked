@@ -43,3 +43,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Events](notes/Events.md)
 
 [Asynchronous JavaScript](notes/asyncJS.md)
+
+[The new Keyword](notes/newKeyword.md)
