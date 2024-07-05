@@ -45,3 +45,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [Asynchronous JavaScript](notes/asyncJS.md)
 
 [The new Keyword](notes/newKeyword.md)
+
+[Prototypes](notes/Prototypes.md)
