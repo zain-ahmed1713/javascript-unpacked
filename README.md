@@ -47,3 +47,5 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 [The new Keyword](notes/newKeyword.md)
 
 [Prototypes](notes/Prototypes.md)
+
+[Call Method](notes/callMethod.md)
