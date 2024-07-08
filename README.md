@@ -48,6 +48,6 @@ Happy learning! Let’s unpack the intricacies of JavaScript together.
 
 [Prototypes](notes/Prototypes.md)
 
-[Call Method](notes/callMethod.md)
+[Call and Bind](notes/callMethod.md)
 
 [Classes](notes/classes.md)

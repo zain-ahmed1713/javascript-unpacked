@@ -50,3 +50,57 @@ console.log(bikeDetails);
 ```
 
 Now everything is working correctly as we’ve passed displayBike’s `this` context to displayCarDetails and it added the values to it.
+
+## Bind
+
+`Bind` method allows us to create a new function which we can execute later with the new `this` context.
+
+Suppose we’ve a button on our form, When the button is clicked, we want our user to register.
+
+```jsx
+class Signup {
+  constructor(username, password) {
+    this.username = username;
+    this.password = password;
+    this.btn = document.querySelector("button");
+  }
+
+  signupUser() {
+    console.log(`${this.username} has been registered.`);
+  }
+
+  handleClick() {
+    this.btn.addEventListener("click", this.signupUser);
+  }
+}
+
+const userOne = new Signup("Zain", 1234);
+console.log(userOne.handleClick());
+```
+
+When the button gets clicked, We get **undefined has been registered.** This is happening because the `this` inside the `signUpUser` refers to `<button>` element since it’s event listener calls `signUpUser` method.
+
+To correct the code, we’ve to bind the `this` context of the `Signup` class to the method.
+
+```jsx
+class Signup {
+  constructor(username, password) {
+    this.username = username;
+    this.password = password;
+    this.btn = document.querySelector("button");
+
+    this.signupUser = this.signupUser.bind(this);
+  }
+
+  signupUser() {
+    console.log(`${this.username} has been registered.`);
+  }
+
+  handleClick() {
+    this.btn.addEventListener("click", this.signupUser);
+  }
+}
+
+const userOne = new Signup("Zain", 1234);
+console.log(userOne.handleClick());
+```
